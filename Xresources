@@ -1,0 +1,44 @@
+*.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+!URxvt.background: black
+URxvt.background: rgba:0000/0000/0000/ccdd
+URxvt.foreground: white
+URxvt.color0: black
+URxvt.color1: red3
+URxvt.color2: green3
+URxvt.color3: yellow3
+URxvt.color4: DodgerBlue1
+URxvt.color5: magenta3
+URxvt.color6: cyan3
+URxvt.color7: gray90
+URxvt.color8: gray50
+URxvt.color9: red
+URxvt.color10: green
+URxvt.color11: yellow
+URxvt.color12: SteelBlue1
+URxvt.color13: magenta
+URxvt.color14: cyan
+URxvt.color15: white
+URxvt.colorUL: white
+URxvt.underlineColor: white
+URxvt.colorBD: white
+URxvt.colorIT: green
+URxvt.fading: 30
+
+URxvt.scrollBar: off
+URxvt*scrollstyle: xterm
+
+! extensions:
+URxvt.perl-ext: default,matcher
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt*matcher.pattern.1: \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt*matcher.pattern.2: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.rend.0: fg8
+
+! support stop scrolling on tty output
+URxvt.saveLines:         100000
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+URxvt*UrgentOnBell:	 true
