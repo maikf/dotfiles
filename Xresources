@@ -1,5 +1,7 @@
 *.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
 !URxvt.background: black
+URxvt.intensityStyles: true
+URxvt.boldFont:
 URxvt.background: rgba:0000/0000/0000/ccdd
 URxvt.foreground: white
 URxvt.color0: black
