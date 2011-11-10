@@ -34,6 +34,8 @@ alias lt="ll -tr"
 alias v="vim -p"
 alias V="sudo vim -p"
 
+alias g="git"
+
 alias rmr="rm -rf"
 
 alias aoei="setxkbmap us -variant nodeadkeys"
