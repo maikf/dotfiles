@@ -1,0 +1,43 @@
+# from the manpage: A weird imagination is most useful to gain full advantage of all the features
+## saner settings
+startup_message off
+nethack on
+# don't source my .zlogin again
+deflogin off
+
+vbell off
+defscrollback 8192
+# just to make sure..
+autodetach on
+# faster? switching of windows
+altscreen on
+# use my terminals scrollbackbuffer
+termcapinfo xterm*|xs|rxvt* ti@:te@
+
+# Remove some stupid / dangerous key bindings
+bind r   # no linewrap
+bind ^R  # no linewrap
+bind L   # no login
+bind ^\  # no global destruction
+bind S   # no splitscreen
+# Make them better
+# TODO
+
+
+# The vt100 description does not mention "dl". *sigh*
+# ???
+#termcapinfo vt100 dl=5\E[M
+
+# Set the hardstatus prop on gui terms to set the titlebar/icon title
+termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+# hardstatus off
+hardstatus alwayslastline
+caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%H %l"
+
+# set these terminals up to be 'optimal' instead of vt100
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+
+# 256 colors 
+termcapinfo xterm*|rxvt* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+attrcolor b ".I"
+defbce "on"
