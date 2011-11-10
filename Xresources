@@ -1,33 +1,31 @@
 *.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
-!URxvt.background: black
+! bold = light color
 URxvt.intensityStyles: true
 URxvt.boldFont:
-URxvt.background: rgba:0000/0000/0000/ccdd
-URxvt.foreground: white
-URxvt.color0: black
-URxvt.color1: red3
-URxvt.color2: green3
-URxvt.color3: yellow3
-URxvt.color4: DodgerBlue1
-URxvt.color5: magenta3
-URxvt.color6: cyan3
-URxvt.color7: gray90
-URxvt.color8: gray50
-URxvt.color9: red
-URxvt.color10: green
-URxvt.color11: yellow
-URxvt.color12: SteelBlue1
-URxvt.color13: magenta
-URxvt.color14: cyan
-URxvt.color15: white
-URxvt.colorUL: white
-URxvt.underlineColor: white
-URxvt.colorBD: white
-URxvt.colorIT: green
-URxvt.fading: 30
+
+! Molokai theme
+URxvt*background: #101010
+URxvt*foreground: #d0d0d0
+URxvt*color0: #101010
+URxvt*color1: #960050
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #30309b
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff0090
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0d0d0
+! 2 == green
+URxvt*cursorColor: 2
 
 URxvt.scrollBar: off
-URxvt*scrollstyle: xterm
 
 ! extensions:
 URxvt.perl-ext: default,matcher
@@ -43,4 +41,4 @@ URxvt.saveLines:         100000
 URxvt*scrollTtyOutput:   false
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
-URxvt*UrgentOnBell:	 true
+URxvt*urgentOnBell:	 true
