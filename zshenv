@@ -1,13 +1,70 @@
-export HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTFILE=~/.histfile
+HISTSIZE=4000
 SAVEHIST=4000
 
+# some CPAN modules don't install their utilities into $PATH
+__cpanbin=`perl -e 'print join ":", grep { /perl/ && s![^/]+$!bin! && -d } @INC'`
+[ -n "$__cpanbin" ] && PATH+=":$__cpanbin"
+PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
 
-EDITOR="vim"
-PATH="$HOME/bin:$PATH"
-# add scripts from CPAN modules
-PATH+=":$(perl -e '$,=":"; print grep { s,[^/]+$,bin,; -d } @INC')"
-PAGER="less"
-LESS="-i"
+EDITOR=`which vim`
+VISUAL="$EDITOR"
+PAGER=`which less`
+# search ignores case, if in all lowercase; long prompt;
+# print unescaped control chars (for git log)
+LESS="iMR"
 
-LC_CTYPE=en_US.UTF-8
+PERL_CPANM_OPT="--sudo"
+
+
+f() { find . -iname "*$1*" }
+pg() {
+    local pids=$(pgrep -d "," $1)
+    [ -n "$pids" ] && ps f -o user,pid,priority,ni,pcpu,pmem,args --pid=$pids
+}
+
+
+parse_git_branch() {
+    if [ -f .git/HEAD ]; then
+        local branch=$(sed 's/ref: refs\/heads\///g' .git/HEAD)
+        export __CURRENT_GIT_BRANCH=" (±$branch)"
+    else
+        unset __CURRENT_GIT_BRANCH
+    fi
+}
+chpwd_functions=(${chpwd_functions} parse_git_branch)
+parse_git_branch
+
+set_termtitle() {
+    case $TERM in
+    screen*|xterm*|*rxvt*)
+        # plain xterm title
+        print -Pn -- "\e]2;$1"
+        print -rn -- "$2"
+        print -n -- "\a"
+    ;;
+    esac
+    case $TERM in
+    screen*)
+        # screen title (in ^A")
+        print -n -- "\ek"
+        print -rn -- "$2"
+        print -n -- "\e\\"
+
+        # screen location
+        print -Pn -- "\e_$1"
+        print -rn -- "$2"
+        print -n -- "\e\\"
+    ;;
+    esac
+}
+
+function precmd() {
+    set_termtitle "%m: %~" "$__CURRENT_GIT_BRANCH"
+}
+
+function preexec() {
+    set_termtitle "%m: " "$2$__CURRENT_GIT_BRANCH"
+}
+
+# vim: set ts=4 sts=4 expandtab:
