@@ -28,13 +28,7 @@ URxvt*cursorColor: 2
 URxvt.scrollBar: off
 
 ! extensions:
-URxvt.perl-ext: default,matcher
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
-URxvt.matcher.button: 1
-URxvt*matcher.pattern.1: \\b(mailto|http|https|ftp|file):[/]*[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt*matcher.pattern.2: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt.matcher.rend.0: fg8
+! URxvt.perl-ext:
 
 ! support stop scrolling on tty output
 URxvt.saveLines:         100000
@@ -42,3 +36,5 @@ URxvt*scrollTtyOutput:   false
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 URxvt*urgentOnBell:	 true
+
+Xft.DPI: 96.0
