@@ -1,20 +1,20 @@
-HISTFILE=~/.histfile
-HISTSIZE=4000
-SAVEHIST=4000
+export HISTFILE=~/.histfile
+export HISTSIZE=4000
+export SAVEHIST=4000
 
 # some CPAN modules don't install their utilities into $PATH
 __cpanbin=`perl -e 'print join ":", grep { /perl/ && s![^/]+$!bin! && -d } @INC'`
 [ -n "$__cpanbin" ] && PATH+=":$__cpanbin"
-PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
+export PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
 
-EDITOR=`which vim`
-VISUAL="$EDITOR"
-PAGER=`which less`
+export EDITOR=`which vim`
+export VISUAL="$EDITOR"
+export PAGER=`which less`
 # search ignores case, if in all lowercase; long prompt;
 # print unescaped control chars (for git log)
-LESS="iMR"
+export LESS="iMR"
 
-PERL_CPANM_OPT="--sudo"
+export PERL_CPANM_OPT="--sudo"
 
 
 f() { find . -iname "*$1*" }
