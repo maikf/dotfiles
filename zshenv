@@ -20,7 +20,12 @@ export PERL_CPANM_OPT="--sudo"
 f() { find . -iname "*$1*" }
 pg() {
     local pids=$(pgrep -d "," $1)
-    [ -n "$pids" ] && ps f -o user,pid,priority,ni,pcpu,pmem,args --pid=$pids
+    [ -n "$pids" ] && ps f -o user,pid,pri,ni,pcpu,pmem,args --pid=$pids
+}
+st() {
+    local dir=$(mktemp -d)
+    strace -s 2048 -f -o $dir/strace $@
+    $EDITOR $dir/strace*
 }
 
 
