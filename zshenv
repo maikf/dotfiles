@@ -18,16 +18,17 @@ export PERL_CPANM_OPT="--sudo"
 
 
 f() { find . -iname "*$1*" }
+
 pg() {
     local pids=$(pgrep -d "," $1)
     [ -n "$pids" ] && ps f -o user,pid,pri,ni,pcpu,pmem,args --pid=$pids
 }
+
 st() {
     local dir=$(mktemp -d)
-    strace -s 2048 -f -o $dir/strace $@
+    strace -s 2048 -f -o $dir/strace "$@"
     $EDITOR $dir/strace*
 }
-
 
 parse_git_branch() {
     if [ -f .git/HEAD ]; then
@@ -37,6 +38,7 @@ parse_git_branch() {
         unset __CURRENT_GIT_BRANCH
     fi
 }
+
 cwd_to_urxvt() {
     local cwd="$PWD"
     local update="\0033]777;cwd-spawn;path;$cwd\0007"
@@ -51,6 +53,7 @@ cwd_to_urxvt() {
 }
 
 ssh_connection_to_urxvt() {
+    # don't propagate information to urxvt if ssh is used non-interactive
     [ -t 0 ] || [ -t 1 ] || return
     local update="\0033]777;cwd-spawn;ssh;$1\0007"
 
