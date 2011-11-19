@@ -37,18 +37,37 @@ parse_git_branch() {
         unset __CURRENT_GIT_BRANCH
     fi
 }
-chpwd_functions=(${chpwd_functions} parse_git_branch)
-parse_git_branch
+cwd_to_urxvt() {
+    local cwd="$PWD"
+    local update="\0033]777;cwd-spawn;path;$cwd\0007"
+
+    case $TERM in
+    screen*)
+    # pass through to parent terminal emulator
+        update="\0033P$update\0033\\";;
+    esac
+
+    echo -ne "$update"
+}
+
+ssh_connection_to_urxvt() {
+    [ -t 0 ] || [ -t 1 ] || return
+    local update="\0033]777;cwd-spawn;ssh;$1\0007"
+
+    case $TERM in
+    screen*)
+    # pass through to parent terminal emulator
+        update="\0033P$update\0033\\";;
+    esac
+
+    echo -ne "$update"
+}
 
 set_termtitle() {
-    case $TERM in
-    screen*|xterm*|*rxvt*)
-        # plain xterm title
-        print -Pn -- "\e]2;$1"
-        print -rn -- "$2"
-        print -n -- "\a"
-    ;;
-    esac
+    # plain xterm title
+    print -Pn -- "\e]2;$1"
+    print -rn -- "$2"
+    print -n -- "\a"
     case $TERM in
     screen*)
         # screen title (in ^A")
@@ -62,14 +81,6 @@ set_termtitle() {
         print -n -- "\e\\"
     ;;
     esac
-}
-
-function precmd() {
-    set_termtitle "%m: %~" "$__CURRENT_GIT_BRANCH"
-}
-
-function preexec() {
-    set_termtitle "%m: " "$2$__CURRENT_GIT_BRANCH"
 }
 
 # vim: set ts=4 sts=4 expandtab:

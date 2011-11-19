@@ -73,4 +73,17 @@ dotfiles=$(dirname $(readlink ~/.zshrc))
 # If the configfiles are in a git repository, update if it’s older than one hour
 find $dotfiles -maxdepth 1 -name .git -mmin +60 -execdir ./update.sh \; &!
 
+chpwd_functions=(${chpwd_functions} parse_git_branch cwd_to_urxvt)
+parse_git_branch
+cwd_to_urxvt
+
+precmd() {
+    set_termtitle "%m: %~" "$__CURRENT_GIT_BRANCH"
+}
+
+preexec() {
+    set_termtitle "%m: " "$2$__CURRENT_GIT_BRANCH"
+}
+
+
 # vim: set ts=4 sts=4 expandtab:
