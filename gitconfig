@@ -4,8 +4,12 @@
     c     = commit
     ca    = commit -a
     co    = checkout
+    cm    = commit -m
     d     = diff
+    ds    = diff --staged
     fp   = format-patch -s -p
+    l     = log
+    lp    = log --patch
     olg   = log --abbrev-commit --abbrev=6 --pretty=oneline
     one   = "!sh -c 'git show -s --pretty=\"tformat:%h (%s, %ai\" \"$@\" | sed -e \"s/ [012][0-9]:[0-5][0-9]:[0-5][0-9] [-+][0-9][0-9][0-9][0-9]$/)/\"' -"
     purge = !git checkout $(git rev-parse --show-cdup) && git clean -xdf
