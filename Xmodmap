@@ -99,7 +99,7 @@ keycode 105 = Control_R NoSymbol Control_R
 keycode 106 = KP_Divide XF86_Ungrab KP_Divide XF86_Ungrab
 keycode 107 = Print Sys_Req Print Sys_Req
 ! AltGr:
-keycode 108 = Mode_switch
+keycode 108 = Mode_switch Multi_key
 keycode 109 = Linefeed NoSymbol Linefeed
 keycode 110 = Home NoSymbol Home
 keycode 111 = Up NoSymbol Up
@@ -268,4 +268,3 @@ add Control = Control_L Control_R
 
 add mod4 = Super_L
 add mod4 = Hyper_L
-add mod4 = Multi_key
