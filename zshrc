@@ -60,8 +60,12 @@ alias ac="apt-cache"
 alias acs="ac search"
 
 
-green_black () { print -rn "%K{green}%F{black}$1%f%k" }
-export PROMPT="$(green_black %m%#) "
+prompt_color() {
+    local color="green"
+    [ -n "$SSH_CONNECTION" ] && color="blue"
+    print -rn "%K{$color}%F{black}$1%f%k"
+}
+export PROMPT="$(prompt_color %m%#) "
 export RPROMPT=""
 
 # Have a bell-character put out, everytime a command finishes.
