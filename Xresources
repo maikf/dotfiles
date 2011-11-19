@@ -27,8 +27,11 @@ URxvt*cursorColor: 2
 
 URxvt.scrollBar: off
 
-! extensions:
-! URxvt.perl-ext:
+! extensions
+URxvt*perl-lib: /home/maikf/.urxvt
+URxvt*perl-ext: cwd-spawn
+
+URxvt.keysym.M-t: perl:cwd-spawn
 
 ! support stop scrolling on tty output
 URxvt.saveLines:         100000
