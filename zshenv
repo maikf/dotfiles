@@ -26,7 +26,7 @@ pg() {
 
 st() {
     local dir=$(mktemp -d)
-    strace -s 2048 -f -o $dir/strace "$@"
+    strace -s 2048 -f -o $dir/strace -v "$@"
     $EDITOR $dir/strace*
 }
 
