@@ -26,6 +26,9 @@ bindkey ^R history-incremental-search-backward
 bindkey ^A vi-insert-bol
 bindkey ^E vi-insert-eol
 
+# On debian, App::Ack is installed as ack-grep, so alias it
+which ack-grep >/dev/null && alias ack='ack-grep'
+
 alias l="ls -F --time-style='+%F %T'"
 alias ll="l -lh"
 alias la="ll -a"
@@ -88,6 +91,5 @@ precmd() {
 preexec() {
     set_termtitle "%m: " "$2$__CURRENT_GIT_BRANCH"
 }
-
 
 # vim: set ts=4 sts=4 expandtab:
