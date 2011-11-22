@@ -27,6 +27,8 @@ set expandtab
 set sts=4
 set sw=4
 
+filetype indent on
+
 set number
 hi LineNr cterm=bold ctermfg=black
 syntax on
