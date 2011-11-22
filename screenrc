@@ -2,7 +2,7 @@
 ## saner settings
 startup_message off
 nethack on
-# don't source my .zlogin again
+# don't source my .login again
 deflogin off
 
 vbell off
@@ -20,18 +20,10 @@ bind ^R  # no linewrap
 bind L   # no login
 bind ^\  # no global destruction
 bind S   # no splitscreen
-# Make them better
-# TODO
-
-
-# The vt100 description does not mention "dl". *sigh*
-# ???
-#termcapinfo vt100 dl=5\E[M
 
 # Set the hardstatus prop on gui terms to set the titlebar/icon title
 termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
-# hardstatus off
-hardstatus alwayslastline
+hardstatus off
 caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%H %l"
 
 # set these terminals up to be 'optimal' instead of vt100
