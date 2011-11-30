@@ -37,6 +37,9 @@ alias lt="ll -tr"
 alias v="vim -p"
 alias V="sudo vim -p"
 
+alias p="ps f -o user,pid,pcpu,vsz,rss,args"
+alias pd="perldoc"
+
 alias g="git"
 
 alias rmr="rm -rf"
