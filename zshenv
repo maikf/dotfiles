@@ -21,11 +21,12 @@ f() { find . -iname "*$1*" }
 
 pg() {
     local pids=$(pgrep -d "," $1)
-    [ -n "$pids" ] && ps f -o user,pid,pri,ni,pcpu,pmem,args --pid=$pids
+    [ -n "$pids" ] && ps f -o user,pid,pcpu,vsz,rss,args --pid=$pids
 }
 
 st() {
     local dir=$(mktemp -d)
+    echo $dir/strace
     strace -s 2048 -f -o $dir/strace -v "$@"
     $EDITOR $dir/strace*
 }
