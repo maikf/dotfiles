@@ -12,7 +12,9 @@
 (defun my-config-files ()
   (let ((dir (my-dir "config/"))
 	(rx "^[[:digit:]][[:digit:]]-.*\.el$"))
-    (directory-files dir t rx t)))
+    (sort (directory-files dir t rx nil)
+	  (lambda (left right)
+	    (< (string-to-number left) (string-to-number right))))))
 
 ;; load subconfig
 (defun my-load-config ()
