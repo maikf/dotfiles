@@ -14,11 +14,18 @@
 
 ;; display line & column in status
 (column-number-mode t)
+
 ;; and line numbers
 (require 'linum)
 (global-linum-mode 1)
 
 (load-theme 'tango-dark t)
+
+;; Store backups in a single directory (/tmp/emacs-backups) so that
+;; they don’t clutter up my filesystem.
+(let ((backupdir "/tmp/emacs-backups/"))
+  (mkdir backupdir t)
+  (setq backup-directory-alist `(("." . ,backupdir))))
 
 ;; one character ought to be enough to answer questions
 (fset 'yes-or-no-p 'y-or-n-p)
