@@ -27,6 +27,11 @@ set expandtab
 set sts=4
 set sw=4
 
+" save backup-/swapfiles in a separate directory
+silent execute '! [ -d ~/.vimrecover ] || mkdir ~/.vimrecover'
+set backupdir=~/.vimrecover
+set directory=~/.vimrecover
+
 filetype indent on
 
 set number
