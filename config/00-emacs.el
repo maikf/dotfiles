@@ -17,7 +17,9 @@
 
 ;; and line numbers
 (require 'linum)
-(global-linum-mode 1)
+;; unfortunately, this doesn't work like I thought it would:
+;; I'd like numbers only in buffers i edit text (as in sourcecode) in
+; (global-linum-mode 1)
 
 (load-theme 'tango-dark t)
 
