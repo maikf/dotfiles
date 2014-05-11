@@ -25,6 +25,8 @@ autocutsel -s PRIMARY -buttonup -f; autocutsel -buttonup -f
 urxvtd -f -o -q
 urxvtc
 
+eval $(cat ~/.fehbg)
+
 mv i3log i3log.old
 echo "Starting at $(date)" > i3log
 i3 -V >> i3log
