@@ -20,7 +20,7 @@ xinput set-prop "TPPS/2 IBM TrackPoint" "Device Accel Profile" 4
 xset mouse 5 1
 
 xset -b
-autocutsel -s PRIMARY -buttonup -f
+autocutsel -s PRIMARY -buttonup -f; autocutsel -buttonup -f
 
 urxvtd -f -o -q
 urxvtc
