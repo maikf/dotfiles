@@ -49,10 +49,12 @@ cwd_to_urxvt() {
     case $TERM in
     screen*)
     # pass through to parent terminal emulator
-        update="\0033P$update\0033\\";;
+        update="\0033P$update\0033\\"
+        echo -ne "$update";;
+    rxvt-unicode)
+        echo -ne "$update";;
     esac
 
-    echo -ne "$update"
 }
 
 ssh_connection_to_urxvt() {
