@@ -48,6 +48,7 @@ alias p="ps f -o user,pid,pcpu,vsz,rss,args"
 alias pd="perldoc"
 
 alias g="git"
+alias u="unp -U"
 
 alias rmr="rm -rf"
 
