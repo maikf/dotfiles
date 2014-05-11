@@ -84,7 +84,7 @@ zle -N zle-line-init
 
 dotfiles=$(dirname $(readlink ~/.zshrc))
 # If the configfiles are in a git repository, update if it’s older than one hour
-find $dotfiles -maxdepth 1 -name .git -mmin +60 -execdir ./update.sh \; &!
+# find $dotfiles -maxdepth 1 -name .git -mmin +60 -execdir ./update.sh \; &!
 
 chpwd_functions=(${chpwd_functions} parse_git_branch cwd_to_urxvt)
 parse_git_branch
