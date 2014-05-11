@@ -2,9 +2,13 @@ export HISTFILE=~/.histfile
 export HISTSIZE=4000
 export SAVEHIST=4000
 
+# add local::lib
+eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 # some CPAN modules don't install their utilities into $PATH
 __cpanbin=`perl -e 'print join ":", grep { /perl/ && s![^/]+$!bin! && -d } @INC'`
 [ -n "$__cpanbin" ] && PATH+=":$__cpanbin"
+
+# fixup $PATH
 export PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
 
 export EDITOR=`which vim`
@@ -13,8 +17,6 @@ export PAGER=`which less`
 # search ignores case, if in all lowercase; long prompt;
 # print unescaped control chars (for git log)
 export LESS="iMR"
-
-export PERL_CPANM_OPT="--sudo"
 
 
 f() { find . -iname "*$1*" }
