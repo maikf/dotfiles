@@ -52,7 +52,7 @@ alias u="unp -U"
 
 alias rmr="rm -rf"
 
-alias aoei="setxkbmap us -variant nodeadkeys"
+alias aoei="setxkbmap gb"
 alias asdf="xmodmap ~/.Xmodmap"
 
 alias n=screen -X screen /bin/sh -c "cd $PWD; exec $SHELL"
