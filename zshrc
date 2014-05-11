@@ -23,8 +23,12 @@ unset MAILCHECK
 zstyle ':completion:*:vim:*' ignored-patterns '(*/)#*.o'
 
 bindkey ^R history-incremental-search-backward
-bindkey ^A vi-insert-bol
-bindkey ^E vi-insert-eol
+# FIXME doesn't work
+# bindkey ^A vi-insert-bol
+# bindkey ^E vi-insert-eol
+
+bindkey -M viins "^[[A" up-line-or-history
+bindkey -M viins "^[[B" down-line-or-history
 
 # On debian, App::Ack is installed as ack-grep, so alias it
 which ack-grep >/dev/null && alias ack='ack-grep'
