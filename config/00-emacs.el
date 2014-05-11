@@ -21,6 +21,9 @@
 ;; I'd like numbers only in buffers i edit text (as in sourcecode) in
 ; (global-linum-mode 1)
 
+;; a saner switch buffer
+(iswitchb-mode 1)
+
 (load-theme 'tango-dark t)
 
 ;; Store backups in a single directory (/tmp/emacs-backups) so that
