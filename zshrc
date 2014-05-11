@@ -34,8 +34,11 @@ alias ll="l -lh"
 alias la="ll -a"
 alias lt="ll -tr"
 
+alias e="emacsclient -c -a ''"
 alias v="vim -p"
 alias V="sudo vim -p"
+
+alias sshnull="ssh -oUserKnownHostsFile=/dev/null"
 
 alias p="ps f -o user,pid,pcpu,vsz,rss,args"
 alias pd="perldoc"
