@@ -5,9 +5,13 @@
 (setq inhibit-startup-message t)
 
 (blink-cursor-mode 0)
+
+;; disable almost all UI features
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-; (tooltip-mode -1)
+(menu-bar-mode 0)
+
+(load-theme 'tango-dark t)
 
 ;; hilight matching parens
 (show-paren-mode t)
@@ -19,17 +23,13 @@
 (setq-default indicate-empty-lines t)
 (setq-default show-trailing-whitespace t)
 
-
-;; and line numbers
-(require 'linum)
 ;; unfortunately, this doesn't work like I thought it would:
 ;; I'd like numbers only in buffers i edit text (as in sourcecode) in
+(require 'linum)
 ; (global-linum-mode 1)
 
 ;; a saner switch buffer
 (iswitchb-mode 1)
-
-(load-theme 'tango-dark t)
 
 ;; Store backups in a single directory (/tmp/emacs-backups) so that
 ;; they don’t clutter up my filesystem.
