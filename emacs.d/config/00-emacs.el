@@ -28,6 +28,9 @@
 (require 'linum)
 ; (global-linum-mode 1)
 
+(setq locale-coding-system 'utf-8)
+(flyspell-prog-mode)  ;; spell-checking in comments and strings
+
 ;; a saner switch buffer
 (iswitchb-mode 1)
 
