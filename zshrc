@@ -1,4 +1,4 @@
-#: load completion module
+# load completion module
 autoload -Uz compinit
 compinit
 
