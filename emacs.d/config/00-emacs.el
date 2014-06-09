@@ -15,6 +15,11 @@
 ;; display line & column in status
 (column-number-mode t)
 
+;; useless whitespace
+(setq-default indicate-empty-lines t)
+(setq-default show-trailing-whitespace t)
+
+
 ;; and line numbers
 (require 'linum)
 ;; unfortunately, this doesn't work like I thought it would:
