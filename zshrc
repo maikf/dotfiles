@@ -38,8 +38,19 @@ alias ll="l -lh"
 alias la="ll -a"
 alias lt="ll -tr"
 
-alias e="emacsclient -c -a ''"
-alias v="vim -p"
+e () {
+  if [ -z "$DISPLAY" ]; then
+    # open files in tabs
+    vim -p "$@"
+  else
+    # create an emacs server if not already running
+    # connect to it and create a new frame
+    # and immediately exit
+    emacsclient -c -a '' -n "$@"
+  fi
+}
+
+alias v=e
 alias V="sudo vim -p"
 
 alias sshnull="ssh -oUserKnownHostsFile=/dev/null"
