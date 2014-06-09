@@ -73,6 +73,9 @@ alias agi="ag install"
 alias ac="apt-cache"
 alias acs="ac search"
 
+qrview() {
+    qrencode -s 8 -o - "$*" | feh -
+}
 
 prompt_color() {
     local color="green"
