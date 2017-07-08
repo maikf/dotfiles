@@ -3,7 +3,8 @@ autoload -Uz compinit
 compinit
 
 setopt no_beep
-setterm -blength 0 # disable linux vt bell
+# disable linux vt bell
+[[ "$TERM" = "linux" ]] && setterm -blength 0
 
 setopt short_loops
 
