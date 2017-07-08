@@ -2,22 +2,29 @@ export HISTFILE=~/.histfile
 export HISTSIZE=4000
 export SAVEHIST=4000
 
-# add local::lib
-eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-# some CPAN modules don't install their utilities into $PATH
-__cpanbin=`perl -e 'print join ":", grep { /perl/ && s![^/]+$!bin! && -d } @INC'`
-[ -n "$__cpanbin" ] && PATH+=":$__cpanbin"
+# add Perl local::lib
+if [[ -e ~/perl5/lib/perl5/ ]]; then
+    eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+    # some CPAN modules don't install their utilities into $PATH
+    local __cpanbin=$(perl -e 'print join ":", grep { /perl/ && s![^/]+$!bin! && -d } @INC')
+    [ -n "$__cpanbin" ] && PATH+=":$__cpanbin"
+fi
 
-# fixup $PATH
-export PATH="$HOME/bin:$PATH:/sbin:/usr/sbin"
+__PATH="/sbin:/bin:/usr/sbin:$HOME/.local/bin"
+
+if [[ -e ~/src/android/sdk/ ]]; then
+    __PATH+=":$HOME/src/android/sdk/platform-tools:$HOME/src/android/sdk/tools"
+fi
+
+export PATH="$__PATH:$PATH"
 
 export EDITOR=`which vim`
 export VISUAL="$EDITOR"
 export PAGER=`which less`
+
 # search ignores case, if in all lowercase; long prompt;
 # print unescaped control chars (for git log)
 export LESS="iMR"
-
 
 f() { find . -iname "*$1*" }
 
