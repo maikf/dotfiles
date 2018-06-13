@@ -1,55 +1,48 @@
-*.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
-Eclipse*fontList: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+!Eclipse*fontList: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
 
 URxvt*reverseVideo: true
+URxvt*font: xft:Fira Mono:size=9,xft:Noto Color Emoji,size=9
 
-! color0       (black)            = Black
-! color1       (red)              = Red3
-! color2       (green)            = Green3
-! color3       (yellow)           = Yellow3
-! color4       (blue)             = Blue3
-! color5       (magenta)          = Magenta3
-! color6       (cyan)             = Cyan3
-! color7       (white)            = AntiqueWhite
-!
-! color8       (bright black)     = Grey25
-! color9       (bright red)       = Red
-! color10      (bright green)     = Green
-! color11      (bright yellow)    = Yellow
-! color12      (bright blue)      = Blue
-! color13      (bright magenta)   = Magenta
-! color14      (bright cyan)      = Cyan
-! color15      (bright white)     = White
-! foreground                      = Black
-! background                      = White
-
-URxvt*boldFont: -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
 ! bold uses bright colors
 URxvt*intensityStyles: true
-! force bold font with default foreground to also use bright white
-URxvt*colorBD: #f3f3f3
 
-! based on the Molokai theme
-URxvt*foreground: #101010
-URxvt*background: #d0d0d0
-URxvt*color0: #101010
-URxvt*color1: #960050
-URxvt*color2: #66aa11
-URxvt*color3: #c47f2c
-URxvt*color4: #30309b
-URxvt*color5: #7e40a5
-URxvt*color6: #3579a8
-URxvt*color7: #d0d0d0
+! based on the Doom One theme
+URxvt*foreground: #282c34
+URxvt*background: #bbc2cf
+! black
+*color0: #282c34
+! red
+*color1: #ff6c6b
+! green
+*color2: #98be65
+! yellow
+*color3: #ecbe7b
+! blue
+*color4: #2257a0
+! magenta
+*color5: #c678dd
+! cyan
+*color6: #5699af
+! white
+*color7: #bbc2cf
 
-URxvt*color8: #777788
-URxvt*color9: #ff0090
-URxvt*color10: #80ff00
-URxvt*color11: #ffba68
-URxvt*color12: #5f5fee
-URxvt*color13: #bb88dd
-URxvt*color14: #4eb4fa
-URxvt*color15: #f3f3f3
-! 2 == green
+! bright black
+*color8:  #3f444a
+! bright red
+*color9:  #da8548
+! bright green
+*color10: #4db5db
+! bright yellow
+*color11: #ffba68
+! bright blue
+*color12: #51afef
+! bright magenta
+*color13: #a9a1e1
+! bright cyan
+*color14: #46d9ff
+! bright white
+*color15: #dfdfdf
+
 URxvt*cursorColor: 2
 
 URxvt.scrollBar: off
@@ -67,4 +60,4 @@ URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 URxvt*urgentOnBell:	 true
 
-Xft.DPI: 96.0
+Xft.dpi: 144
