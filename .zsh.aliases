@@ -1,0 +1,48 @@
+alias l="ls -F --time-style='+%F %T'"
+alias ll="l -lh"
+alias la="ll -a"
+alias lt="ll -tr"
+
+alias sshnull="ssh -oUserKnownHostsFile=/dev/null"
+
+alias p="ps f -o user,pid,pcpu,vsz,rss,args"
+alias pd="perldoc"
+
+alias g="git"
+alias u="unp -U"
+
+alias rmr="rm -rf"
+
+alias aoei="setxkbmap gb"
+alias asdf="xmodmap ~/.Xmodmap"
+
+alias bc="bc -ql"
+alias rsync="rsync --progress -vv"
+
+alias -g T="| tail"
+alias -g G="| grep"
+alias -g L="| less"
+alias -g X="| xxd"
+alias -g H="| head"
+
+alias agi="apt install"
+alias ac="apt-cache"
+alias acs="ac search"
+
+function qrview() {
+    qrencode -t UTF8 -s 8 -o - "$*"
+}
+
+function f() { find . -iname "*$1*" }
+
+function pg() {
+    local pids=$(pgrep -d "," $1)
+    [ -n "$pids" ] && ps f -o user,pid,pcpu,vsz,rss,args --pid=$pids
+}
+
+function st() {
+    local dir=$(mktemp -d "/tmp/strace.XXXXXXXXXX")
+    echo $dir/strace
+    strace -s 2048 -f -o $dir/strace -v "$@"
+    # $EDITOR $dir/strace*
+}
