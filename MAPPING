@@ -1,3 +1,0 @@
-i3.config ~/.i3/config
-ssh.config ~/.ssh/config
-emacs.d ~/.emacs.d
