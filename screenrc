@@ -1,4 +1,6 @@
-# from the manpage: A weird imagination is most useful to gain full advantage of all the features
+# quoted from the manpage:
+# A weird imagination is most useful to gain full advantage of all the features
+
 ## saner settings
 startup_message off
 nethack on
@@ -30,6 +32,5 @@ caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%H %l"
 termcapinfo xterm*|linux*|rxvt*|Eterm* OP
 
 # 256 colors 
-termcapinfo xterm*|rxvt* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-attrcolor b ".I"
+term screen-256color
 defbce "on"
