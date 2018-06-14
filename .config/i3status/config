@@ -1,0 +1,49 @@
+order += "disk /"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "battery 0"
+order += "tztime date"
+order += "tztime time"
+order += "volume master"
+
+cpu_temperature 0 {
+        max_threshold = 60
+        format = ""
+        format_above_threshold = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+}
+
+disk "/" {
+    format = ""
+    format_below_threshold = "Warning: %free left on /"
+    low_threshold = 5
+}
+
+cpu_usage {
+    format = "cpu: %usage"
+}
+
+battery 0 {
+        hide_seconds = true
+        integer_battery_capacity = true
+        format = "bat: %percentage %status %remaining"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = ""
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime date {
+    format = "%A, %d %B"
+}
+
+tztime time {
+    format = "%H:%M"
+}
+
+volume master {
+    device = "pulse"
+}
