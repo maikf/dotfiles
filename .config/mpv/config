@@ -1,0 +1,10 @@
+fs
+stop-screensaver
+# softvol=no
+screenshot-format=png
+screenshot-template=shot-%F-%P
+cache=40000
+af=scaletempo
+x11-netwm=yes
+no-audio-display
+audio-normalize-downmix=yes
