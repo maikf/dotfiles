@@ -1,2 +1,38 @@
-.config/doom
-.emacs.d
+/.histfile
+/.zcompdump
+
+# temp files
+/.cache/
+/.vimrecover/
+/.thumbnails/
+/.xsession-errors
+/.Xauthority
+
+# emacs
+/.config/doom
+/.emacs.d
+
+# various languages
+# FIXME ideally these would live in their own containers, but for now…
+/.multirust
+/.rustup/
+/.cabal/
+/.ghc/
+/.hoogle/
+/.stack/
+/.cpan/
+/perl5/
+/.gradle/
+/.java/
+
+
+# source files
+/src/
+/go/
+
+/Downloads/
+/Documents/
+/Pictures/
+/Maildir/
+/Music/
+/Videos/
