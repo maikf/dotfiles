@@ -15,6 +15,7 @@ workspace_layout stacked
 for_window [class="Pavucontrol"] floating enable
 for_window [instance="emacs-org-protocol"] floating enable
 for_window [title="Event Tester"] floating enable
+for_window [class="VirtualBox Machine"] floating enable
 
 # start a terminal
 bindcode $mod+36 exec urxvtc
