@@ -10,7 +10,7 @@ cpu_temperature 0 {
         max_threshold = 60
         format = ""
         format_above_threshold = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
 }
 
 disk "/" {
