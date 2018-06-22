@@ -31,6 +31,9 @@ nm-applet&
 # automatically lock my screen when it blanks
 xss-lock i3lock&
 
+touch ~/.please_dont_die
 i3
 
-while `urxvt`; do; done;
+if [[ -f ~/.please_dont_die ]]; then
+    urxvt
+fi
