@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# add custom completion functions
+fpath=(~/.config/zsh/functions $fpath)
+
 # load completion module
 autoload -Uz compinit
 compinit
