@@ -54,6 +54,8 @@ export LC_PAPER="de_DE.UTF-8"
 export EDITOR="vim"
 export VISUAL="$EDITOR"
 export PAGER="less"
+# I tell YOU when to use a pager
+export SYSTEMD_PAGER=""
 
 # search ignores case, if in all lowercase; long prompt;
 # print unescaped control chars (for git log)
